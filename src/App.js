@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-function App() {
+// projects
+import Stopwatch from "./projects/stopwatch";
+import AlarmClock from "./projects/alarm-clock";
+import Timer from "./projects/timer";
+import Clock from "./projects/clock";
+
+// global styles
+import GlobalStyles from "./global-styles";
+
+const App = ({ mainColor }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <dip className='App'>
+        <GlobalStyles mainColor={mainColor} />
+        <Switch>
+          <Route path='/stopwatch' component={Stopwatch} />
+          <Route path='/alarm' component={AlarmClock} />
+          <Route path='/timer' component={Timer} />
+          <Route path='/clock' component={Clock} />
+        </Switch>
+      </dip>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
