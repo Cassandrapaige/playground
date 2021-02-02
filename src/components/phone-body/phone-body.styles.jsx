@@ -52,6 +52,8 @@ export const StyledPhoneScreen = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 20px;
+  color: #fff;
 `;
 
 export const StyledUpperToolbar = styled.div`
@@ -70,6 +72,10 @@ export const StyledUpperToolbar = styled.div`
   .item {
     color: #fff;
     font-size: 0.65em;
+
+    .local-time {
+      font-variant-numeric: tabular-nums;
+    }
 
     span {
       padding: 0 5px;

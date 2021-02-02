@@ -8,6 +8,7 @@ import Clock from "./projects/clock";
 
 // global styles
 import GlobalStyles from "./global-styles";
+import PhoneBody from "./components/phone-body/phone-body.component";
 
 const App = ({ mainColor }) => {
   return (
@@ -15,10 +16,12 @@ const App = ({ mainColor }) => {
       <dip className='App'>
         <GlobalStyles mainColor={mainColor} />
         <Switch>
-          <Route path='/stopwatch' component={Stopwatch} />
-          <Route path='/alarm' component={AlarmClock} />
-          <Route path='/timer' component={Timer} />
-          <Route path='/clock' component={Clock} />
+          <PhoneBody>
+            <Route path='/stopwatch' component={Stopwatch} />
+            <Route path='/alarm' component={AlarmClock} />
+            <Route path='/timer' component={Timer} />
+            <Route path='/clock' component={Clock} />
+          </PhoneBody>
         </Switch>
       </dip>
     </BrowserRouter>

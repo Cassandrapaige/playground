@@ -23,10 +23,10 @@ import {
   StyledLowerToolbar,
 } from "./phone-body.styles";
 
+import { doubleDigits } from "../../constants";
+
 const PhoneBody = ({ children }) => {
   const [time, setTime] = useState(null);
-  //  slice(-2) extracts the last two elements in the sequence, adding "0" if string is a single char
-  const doubleDigits = (num) => ("0" + num).slice(-2);
 
   // GET LOCAL TIME
   const getCurrentTime = useCallback(() => {
